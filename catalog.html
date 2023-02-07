@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff">
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Каталог товаров</title>
+  <link rel="stylesheet" href="css/main.min.css?_v=20230207142403">
+</head>
+
+<body>
+  <header class="header" data-scroll-header>
+    <div class="header-top">
+      <div class="container">
+        <div class="header-top__inner">
+          <nav class="header-info" data-da=".header-mobile,992">
+            <ul class="header-info__list">
+              <li class="header-info__item">
+                <a class="header-info__link" href="">
+                  О компании
+                </a>
+              </li>
+              <li class="header-info__item">
+                <a class="header-info__link" href="">
+                  Условия оплаты
+                </a>
+              </li>
+              <li class="header-info__item">
+                <a class="header-info__link" href="">
+                  Доставка
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="language" data-da=".header-bottom__actions,992">
+            <select class="language__select default-select" name="language">
+              <option selected value="ru">рус</option>
+              <option value="eng">eng</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-middle">
+      <div class="container">
+        <div class="header-middle__inner">
+          <a class="logo" href="#">
+            <img class="logo__img" width="180" height="52" src="img/logo.svg" alt="">
+          </a>
+          <div class="header-search" data-da=".header-mobile,620,first">
+            <form class="header-search__form">
+              <input class="header-search__input" type="text" placeholder="Что вы ищите?">
+              <button class="header-search__btn">Найти</button>
+            </form>
+          </div>
+          <div class="callback">
+            <p class="callback__title">Обратный звонок:</p>
+            <ul class="callback__list">
+              <li class="callback__item">
+                <a class="callback__link" href="tel:+71234567899">
+                  +7 (123-45) 6-78-99
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="worktime" data-da=".header-mobile,992,first">
+            <p class="worktime__title">График работы:</p>
+            пн-пт с 9:00 18:00
+            <br>
+            сб с 9:00–17:00
+          </div>
+          <div class="user-nav" data-da=".header-bottom__actions,992,1">
+            <a class="user-nav__link" href="">
+              <svg width="21" height="21">
+                <use xlink:href="img/sprite.svg#svg-heart"></use>
+              </svg>
+              <span class="user-nav__digit">10</span>
+            </a>
+            <a class="user-nav__link" href="">
+              <svg width="21" height="21">
+                <use xlink:href="img/sprite.svg#svg-cart"></use>
+              </svg>
+              <span class="user-nav__digit">2</span>
+            </a>
+            <a class="user-nav__link" href="">
+              <svg width="21" height="21">
+                <use xlink:href="img/sprite.svg#svg-user"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-bottom">
+      <div class="container">
+        <div class="header-bottom__inner">
+          <nav class="menu" data-da=".header-mobile,992,first">
+            <ul class="menu__list menu-list">
+              <li class="menu__item">
+                <a class="menu__link catalog-link" href="catalog.html">
+                  Каталог товаров
+                </a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="calculator.html">
+                  Калькулятор ремонта
+                </a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#season">
+                  Сезонные продукты
+                </a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#hit">
+                  Хиты продаж
+                </a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="">
+                  Доставка
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="header-bottom__actions"></div>
+          <button class="menu-btn" aria-label="Открыть меню">
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="header-mobile"></div>
+  </header>
+<main class="main offset-y">
+  <div class="breadcrumbs">
+  <div class="container">
+    <ul class="breadcrumbs__list h-scroll">
+      <li class="breadcrumbs__item breadcrumbs__item--home">
+        <a href="#">Главная</a>
+      </li>
+      <li class="breadcrumbs__item">
+        <span>Каталог</span>
+      </li>
+    </ul>
+  </div>
+</div>
+  <section class="catalog">
+    <div class="container">
+      <div class="catalog__inner">
+        <aside class="sidebar catalog__sidebar">
+  <form class="catalog__sidebar-form">
+    <ul class="catalog__sidebar-list">
+      <li class="widget spoiler" data-spoilers>
+  <p class="widget__title dropdown-btn active" data-spoiler>Цена</p>
+  <div class="widget__wrapper price-filter dropdown-body">
+    <div class="price-filter__body">
+      <div class="price-filter__box">
+        <span class="price-filter__text">От</span>
+        <label class="price-filter__label">
+          <input class="price-filter__input" id="input-0" type="number" min="0" max="500000" readonly>
+        </label>
+      </div>
+      <div class="price-filter__box">
+        <span class="price-filter__text">До</span>
+        <label class="price-filter__label">
+          <input class="price-filter__input" id="input-1" type="number" min="0" max="500000" readonly>
+        </label>
+      </div>
+    </div>
+    <div class="price-slider" id="price-slider"></div>
+  </div>
+</li>
+      <li class="widget spoiler" data-spoilers>
+  <p class="widget__title dropdown-btn active" data-spoiler>Бренд</p>
+  <div class="widget__wrapper checkbox-filter dropdown-body">
+    <div class="checkbox-filter__body">
+      <div class="checkbox-filter__box">
+        <label class="custom-checkbox">
+          <input type="checkbox">
+          <span>Holzmann</span>
+        </label>
+      </div>
+      <div class="checkbox-filter__box">
+        <label class="custom-checkbox">
+          <input type="checkbox">
+          <span>MetalMaster</span>
+        </label>
+      </div>
+      <div class="checkbox-filter__box">
+        <label class="custom-checkbox">
+          <input type="checkbox">
+          <span>Jet</span>
+        </label>
+      </div>
+      <div class="checkbox-filter__box">
+        <label class="custom-checkbox">
+          <input type="checkbox">
+          <span>Proma</span>
+        </label>
+      </div>
+      <div class="checkbox-filter__box">
+        <label class="custom-checkbox">
+          <input type="checkbox">
+          <span>Realrez</span>
+        </label>
+      </div>
+      <div class="checkbox-filter__box">
+        <label class="custom-checkbox">
+          <input type="checkbox">
+          <span>Optimum</span>
+        </label>
+      </div>
+      <div class="checkbox-filter__box">
+        <label class="custom-checkbox">
+          <input type="checkbox">
+          <span>Fabtec</span>
+        </label>
+      </div>
+      <div class="checkbox-filter__box">
+        <label class="custom-checkbox">
+          <input type="checkbox">
+          <span>Stalex</span>
+        </label>
+      </div>
+      <div class="checkbox-filter__box">
+        <label class="custom-checkbox">
+          <input type="checkbox">
+          <span>Triod</span>
+        </label>
+      </div>
+      <div class="checkbox-filter__box">
+        <label class="custom-checkbox">
+          <input type="checkbox">
+          <span>Ferrox</span>
+        </label>
+      </div>
+      <div class="checkbox-filter__box">
+        <label class="custom-checkbox">
+          <input type="checkbox">
+          <span>Cormak</span>
+        </label>
+      </div>
+    </div>
+  </div>
+</li>
+<li class="widget spoiler" data-spoilers>
+  <p class="widget__title dropdown-btn active" data-spoiler>Назначение</p>
+  <div class="widget__wrapper checkbox-filter dropdown-body">
+    <div class="checkbox-filter__body">
+      <div class="checkbox-filter__box">
+        <label class="custom-checkbox">
+          <input type="checkbox">
+          <span>Токарный станок</span>
+        </label>
+      </div>
+      <div class="checkbox-filter__box">
+        <label class="custom-checkbox">
+          <input type="checkbox">
+          <span>Токарно-винторезный</span>
+        </label>
+      </div>
+      <div class="checkbox-filter__box">
+        <label class="custom-checkbox">
+          <input type="checkbox">
+          <span>Настольный</span>
+        </label>
+      </div>
+      <div class="checkbox-filter__box">
+        <label class="custom-checkbox">
+          <input type="checkbox">
+          <span>Комбинированный</span>
+        </label>
+      </div>
+      <div class="checkbox-filter__box">
+        <label class="custom-checkbox">
+          <input type="checkbox">
+          <span>Назначение 1</span>
+        </label>
+      </div>
+      <div class="checkbox-filter__box">
+        <label class="custom-checkbox">
+          <input type="checkbox">
+          <span>Назначение 1</span>
+        </label>
+      </div>
+      <div class="checkbox-filter__box">
+        <label class="custom-checkbox">
+          <input type="checkbox">
+          <span>Назначение 1</span>
+        </label>
+      </div>
+    </div>
+  </div>
+</li>
+<li class="widget spoiler" data-spoilers>
+  <p class="widget__title dropdown-btn active" data-spoiler>Особенности</p>
+  <div class="widget__wrapper checkbox-filter dropdown-body">
+    <div class="checkbox-filter__body">
+      <div class="checkbox-filter__box">
+        <label class="custom-checkbox">
+          <input type="checkbox">
+          <span>Особенность 1</span>
+        </label>
+      </div>
+      <div class="checkbox-filter__box">
+        <label class="custom-checkbox">
+          <input type="checkbox">
+          <span>Особенность 1</span>
+        </label>
+      </div>
+      <div class="checkbox-filter__box">
+        <label class="custom-checkbox">
+          <input type="checkbox">
+          <span>Особенность 1</span>
+        </label>
+      </div>
+      <div class="checkbox-filter__box">
+        <label class="custom-checkbox">
+          <input type="checkbox">
+          <span>Особенность 1</span>
+        </label>
+      </div>
+      <div class="checkbox-filter__box">
+        <label class="custom-checkbox">
+          <input type="checkbox">
+          <span>Особенность 1</span>
+        </label>
+      </div>
+    </div>
+  </div>
+</li>
+    </ul>
+    <button class="btn catalog__sidebar-btn">Применить</button>
+  </form>
+</aside>
+        <div class="catalog__wrapper">
+  <button class="catalog__btn catalog-btn" aria-label="Открыть фильтры"></button>
+  <div class="catalog__top">
+    <form class="catalog__top-form">
+      <select class="default-select catalog__rating" name="sorting">
+        <option selected value="sort_price">Сортировка: по цене</option>
+        <option value="sort_rate">Сортировка: по рейтингу</option>
+        <option value="sort_date">Сортировка: по дате</option>
+        <option value="sort_abc">Сортировка: по алфавиту</option>
+      </select>
+      <select class="default-select catalog__amount" name="amount">
+        <option selected value="value_1">Товаров на странице: 17</option>
+        <option value="value_2">Товаров на странице: 24</option>
+        <option value="value_2">Товаров на странице: 30</option>
+      </select>
+    </form>
+  </div>
+  <ul class="catalog-list catalog__list">
+    <li class="catalog__item product-card">
+  <a class="product-card__img" href="single.html">
+    <picture><source srcset="img/content/products/1p.webp" type="image/webp"><img src="img/content/products/1p.jpg" alt=""></picture>
+  </a>
+  <div class="product-card__links card-action">
+    <button class="card-action__link favorite-link">
+      <svg width="20" height="20">
+        <use xlink:href="img/sprite.svg#svg-heart"></use>
+      </svg>
+    </button>
+    <a class="card-action__link compare-link" href="single.html">
+      <svg width="20" height="20">
+        <use xlink:href="img/sprite.svg#svg-compare"></use>
+      </svg>
+    </a>
+  </div>
+  <div class="product-card__content">
+    <h3 class="product-card__title">
+      <a class="product-card__link" href="single.html">Токарный станок MetalMaster MML 1830V 18800</a>
+    </h3>
+    <div class="product-card__text">
+      <p>Самовывоз: завтра</p>
+      <p>Курьером: 26 декабря</p>
+    </div>
+    <div class="product-card__price">
+      95 410 <span class="currency">Руб.</span>
+    </div>
+    <span class="product-card__status avblty-status in-stock">
+      Есть в наличии
+    </span>
+  </div>
+  <div class="product-card__actions">
+    <a class="product-card__btn btn" href="/single.html">Купить</a>
+    <button class="product-card__basket" aria-label="Добавить в корзину">
+      <svg width="20" height="20">
+        <use xlink:href="img/sprite.svg#svg-cart"></use>
+      </svg>
+    </button>
+  </div>
+</li><li class="catalog__item product-card">
+  <a class="product-card__img" href="single.html">
+    <picture><source srcset="img/content/products/2p.webp" type="image/webp"><img src="img/content/products/2p.jpg" alt=""></picture>
+  </a>
+  <div class="product-card__links card-action">
+    <button class="card-action__link favorite-link">
+      <svg width="20" height="20">
+        <use xlink:href="img/sprite.svg#svg-heart"></use>
+      </svg>
+    </button>
+    <a class="card-action__link compare-link" href="single.html">
+      <svg width="20" height="20">
+        <use xlink:href="img/sprite.svg#svg-compare"></use>
+      </svg>
+    </a>
+  </div>
+  <div class="product-card__content">
+    <h3 class="product-card__title">
+      <a class="product-card__link" href="single.html">Токарный станок Jet BD-8VS 50000911M</a>
+    </h3>
+    <div class="product-card__text">
+      <p>Самовывоз: завтра</p>
+      <p>Курьером: 26 декабря</p>
+    </div>
+    <div class="product-card__price">
+      105 000 <span class="currency">Руб.</span>
+    </div>
+    <span class="product-card__status avblty-status in-stock">
+      Есть в наличии
+    </span>
+  </div>
+  <div class="product-card__actions">
+    <a class="product-card__btn btn" href="/single.html">Купить</a>
+    <button class="product-card__basket" aria-label="Добавить в корзину">
+      <svg width="20" height="20">
+        <use xlink:href="img/sprite.svg#svg-cart"></use>
+      </svg>
+    </button>
+  </div>
+</li><li class="catalog__item product-card">
+  <a class="product-card__img" href="single.html">
+    <picture><source srcset="img/content/products/3p.webp" type="image/webp"><img src="img/content/products/3p.jpg" alt=""></picture>
+  </a>
+  <div class="product-card__links card-action">
+    <button class="card-action__link favorite-link">
+      <svg width="20" height="20">
+        <use xlink:href="img/sprite.svg#svg-heart"></use>
+      </svg>
+    </button>
+    <a class="card-action__link compare-link" href="single.html">
+      <svg width="20" height="20">
+        <use xlink:href="img/sprite.svg#svg-compare"></use>
+      </svg>
+    </a>
+  </div>
+  <div class="product-card__content">
+    <h3 class="product-card__title">
+      <a class="product-card__link" href="single.html">Токарно-винторезный MetalMaster MML 2870 17034</a>
+    </h3>
+    <div class="product-card__text">
+      <p>Самовывоз: завтра</p>
+      <p>Курьером: 26 декабря</p>
+    </div>
+    <div class="product-card__price">
+      202 300 <span class="currency">Руб.</span>
+    </div>
+    <span class="product-card__status avblty-status in-stock">
+      Есть в наличии
+    </span>
+  </div>
+  <div class="product-card__actions">
+    <a class="product-card__btn btn" href="/single.html">Купить</a>
+    <button class="product-card__basket" aria-label="Добавить в корзину">
+      <svg width="20" height="20">
+        <use xlink:href="img/sprite.svg#svg-cart"></use>
+      </svg>
+    </button>
+  </div>
+</li><li class="catalog__item product-card">
+  <a class="product-card__img" href="single.html">
+    <picture><source srcset="img/content/products/4p.webp" type="image/webp"><img src="img/content/products/4p.jpg" alt=""></picture>
+  </a>
+  <div class="product-card__links card-action">
+    <button class="card-action__link favorite-link">
+      <svg width="20" height="20">
+        <use xlink:href="img/sprite.svg#svg-heart"></use>
+      </svg>
+    </button>
+    <a class="card-action__link compare-link" href="single.html">
+      <svg width="20" height="20">
+        <use xlink:href="img/sprite.svg#svg-compare"></use>
+      </svg>
+    </a>
+  </div>
+  <div class="product-card__content">
+    <h3 class="product-card__title">
+      <a class="product-card__link" href="single.html">Настольный токарный станок HOLZMANN ED300FD 230V</a>
+    </h3>
+    <div class="product-card__text">
+      <p>Самовывоз: завтра</p>
+      <p>Курьером: 26 декабря</p>
+    </div>
+    <div class="product-card__price">
+      200 500 <span class="currency">Руб.</span>
+    </div>
+    <span class="product-card__status avblty-status in-stock">
+      Есть в наличии
+    </span>
+  </div>
+  <div class="product-card__actions">
+    <a class="product-card__btn btn" href="/single.html">Купить</a>
+    <button class="product-card__basket" aria-label="Добавить в корзину">
+      <svg width="20" height="20">
+        <use xlink:href="img/sprite.svg#svg-cart"></use>
+      </svg>
+    </button>
+  </div>
+</li><li class="catalog__item product-card">
+  <a class="product-card__img" href="single.html">
+    <picture><source srcset="img/content/products/5p.webp" type="image/webp"><img src="img/content/products/5p.jpg" alt=""></picture>
+  </a>
+  <div class="product-card__links card-action">
+    <button class="card-action__link favorite-link">
+      <svg width="20" height="20">
+        <use xlink:href="img/sprite.svg#svg-heart"></use>
+      </svg>
+    </button>
+    <a class="card-action__link compare-link" href="single.html">
+      <svg width="20" height="20">
+        <use xlink:href="img/sprite.svg#svg-compare"></use>
+      </svg>
+    </a>
+  </div>
+  <div class="product-card__content">
+    <h3 class="product-card__title">
+      <a class="product-card__link" href="single.html">Комбинированный токарный станок Proma SKF-800 25000800</a>
+    </h3>
+    <div class="product-card__text">
+      <p>Самовывоз: завтра</p>
+      <p>Курьером: 26 декабря</p>
+    </div>
+    <div class="product-card__price">
+      200 500 <span class="currency">Руб.</span>
+    </div>
+    <span class="product-card__status avblty-status in-stock">
+      Есть в наличии
+    </span>
+  </div>
+  <div class="product-card__actions">
+    <a class="product-card__btn btn" href="/single.html">Купить</a>
+    <button class="product-card__basket" aria-label="Добавить в корзину">
+      <svg width="20" height="20">
+        <use xlink:href="img/sprite.svg#svg-cart"></use>
+      </svg>
+    </button>
+  </div>
+</li><li class="catalog__item product-card">
+  <a class="product-card__img" href="single.html">
+    <picture><source srcset="img/content/products/10p.webp" type="image/webp"><img src="img/content/products/10p.jpg" alt=""></picture>
+  </a>
+  <div class="product-card__links card-action">
+    <button class="card-action__link favorite-link">
+      <svg width="20" height="20">
+        <use xlink:href="img/sprite.svg#svg-heart"></use>
+      </svg>
+    </button>
+    <a class="card-action__link compare-link" href="single.html">
+      <svg width="20" height="20">
+        <use xlink:href="img/sprite.svg#svg-compare"></use>
+      </svg>
+    </a>
+  </div>
+  <div class="product-card__content">
+    <h3 class="product-card__title">
+      <a class="product-card__link" href="single.html">Настольный токарный станок Stalex D250×550C</a>
+    </h3>
+    <div class="product-card__text">
+      <p>Самовывоз: завтра</p>
+      <p>Курьером: 26 декабря</p>
+    </div>
+    <div class="product-card__price">
+      176 250 <span class="currency">Руб.</span>
+    </div>
+    <span class="product-card__status avblty-status in-stock">
+      Есть в наличии
+    </span>
+  </div>
+  <div class="product-card__actions">
+    <a class="product-card__btn btn" href="/single.html">Купить</a>
+    <button class="product-card__basket" aria-label="Добавить в корзину">
+      <svg width="20" height="20">
+        <use xlink:href="img/sprite.svg#svg-cart"></use>
+      </svg>
+    </button>
+  </div>
+</li><li class="catalog__item product-card">
+  <a class="product-card__img" href="single.html">
+    <picture><source srcset="img/content/products/11p.webp" type="image/webp"><img src="img/content/products/11p.jpg" alt=""></picture>
+  </a>
+  <div class="product-card__links card-action">
+    <button class="card-action__link favorite-link">
+      <svg width="20" height="20">
+        <use xlink:href="img/sprite.svg#svg-heart"></use>
+      </svg>
+    </button>
+    <a class="card-action__link compare-link" href="single.html">
+      <svg width="20" height="20">
+        <use xlink:href="img/sprite.svg#svg-compare"></use>
+      </svg>
+    </a>
+  </div>
+  <div class="product-card__content">
+    <h3 class="product-card__title">
+      <a class="product-card__link" href="single.html">Токарный станок Stalex SBD-Х7 SC2/350</a>
+    </h3>
+    <div class="product-card__text">
+      <p>Самовывоз: завтра</p>
+      <p>Курьером: 26 декабря</p>
+    </div>
+    <div class="product-card__price">
+      82 927 <span class="currency">Руб.</span>
+    </div>
+    <span class="product-card__status avblty-status in-stock">
+      Есть в наличии
+    </span>
+  </div>
+  <div class="product-card__actions">
+    <a class="product-card__btn btn" href="/single.html">Купить</a>
+    <button class="product-card__basket" aria-label="Добавить в корзину">
+      <svg width="20" height="20">
+        <use xlink:href="img/sprite.svg#svg-cart"></use>
+      </svg>
+    </button>
+  </div>
+</li><li class="catalog__item product-card">
+  <a class="product-card__img" href="single.html">
+    <picture><source srcset="img/content/products/12p.webp" type="image/webp"><img src="img/content/products/12p.jpg" alt=""></picture>
+  </a>
+  <div class="product-card__links card-action">
+    <button class="card-action__link favorite-link">
+      <svg width="20" height="20">
+        <use xlink:href="img/sprite.svg#svg-heart"></use>
+      </svg>
+    </button>
+    <a class="card-action__link compare-link" href="single.html">
+      <svg width="20" height="20">
+        <use xlink:href="img/sprite.svg#svg-compare"></use>
+      </svg>
+    </a>
+  </div>
+  <div class="product-card__content">
+    <h3 class="product-card__title">
+      <a class="product-card__link" href="single.html">Токарно-винторезный станок Jet GH-1640 ZX DRO 50000730T</a>
+    </h3>
+    <div class="product-card__text">
+      <p>Самовывоз: завтра</p>
+      <p>Курьером: 26 декабря</p>
+    </div>
+    <div class="product-card__price">
+      1 400 000 <span class="currency">Руб.</span>
+    </div>
+    <span class="product-card__status avblty-status in-stock">
+      Есть в наличии
+    </span>
+  </div>
+  <div class="product-card__actions">
+    <a class="product-card__btn btn" href="/single.html">Купить</a>
+    <button class="product-card__basket" aria-label="Добавить в корзину">
+      <svg width="20" height="20">
+        <use xlink:href="img/sprite.svg#svg-cart"></use>
+      </svg>
+    </button>
+  </div>
+</li><li class="catalog__item product-card">
+  <a class="product-card__img" href="single.html">
+    <picture><source srcset="img/content/products/13p.webp" type="image/webp"><img src="img/content/products/13p.jpg" alt=""></picture>
+  </a>
+  <div class="product-card__links card-action">
+    <button class="card-action__link favorite-link">
+      <svg width="20" height="20">
+        <use xlink:href="img/sprite.svg#svg-heart"></use>
+      </svg>
+    </button>
+    <a class="card-action__link compare-link" href="single.html">
+      <svg width="20" height="20">
+        <use xlink:href="img/sprite.svg#svg-compare"></use>
+      </svg>
+    </a>
+  </div>
+  <div class="product-card__content">
+    <h3 class="product-card__title">
+      <a class="product-card__link" href="single.html">Электрический двигатель TDM АИР 63B2</a>
+    </h3>
+    <div class="product-card__text">
+      <p>Самовывоз: завтра</p>
+      <p>Курьером: 26 декабря</p>
+    </div>
+    <div class="product-card__price">
+      6 297 <span class="currency">Руб.</span>
+    </div>
+    <span class="product-card__status avblty-status in-stock">
+      Есть в наличии
+    </span>
+  </div>
+  <div class="product-card__actions">
+    <a class="product-card__btn btn" href="/single.html">Купить</a>
+    <button class="product-card__basket" aria-label="Добавить в корзину">
+      <svg width="20" height="20">
+        <use xlink:href="img/sprite.svg#svg-cart"></use>
+      </svg>
+    </button>
+  </div>
+</li><li class="catalog__item product-card">
+  <a class="product-card__img" href="single.html">
+    <picture><source srcset="img/content/products/14p.webp" type="image/webp"><img src="img/content/products/14p.jpg" alt=""></picture>
+  </a>
+  <div class="product-card__links card-action">
+    <button class="card-action__link favorite-link">
+      <svg width="20" height="20">
+        <use xlink:href="img/sprite.svg#svg-heart"></use>
+      </svg>
+    </button>
+    <a class="card-action__link compare-link" href="single.html">
+      <svg width="20" height="20">
+        <use xlink:href="img/sprite.svg#svg-compare"></use>
+      </svg>
+    </a>
+  </div>
+  <div class="product-card__content">
+    <h3 class="product-card__title">
+      <a class="product-card__link" href="single.html">Дисковая пила DEWALT 18В XR DCS570N</a>
+    </h3>
+    <div class="product-card__text">
+      <p>Самовывоз: завтра</p>
+      <p>Курьером: 26 декабря</p>
+    </div>
+    <div class="product-card__price">
+      24 912 <span class="currency">Руб.</span>
+    </div>
+    <span class="product-card__status avblty-status in-stock">
+      Есть в наличии
+    </span>
+  </div>
+  <div class="product-card__actions">
+    <a class="product-card__btn btn" href="/single.html">Купить</a>
+    <button class="product-card__basket" aria-label="Добавить в корзину">
+      <svg width="20" height="20">
+        <use xlink:href="img/sprite.svg#svg-cart"></use>
+      </svg>
+    </button>
+  </div>
+</li>
+  </ul>
+  <nav class="pagination">
+  <ul class="pagination__list">
+    <li class="pagination__arrow"><span>❮</span></li>
+    <li class="current"><span>1</span></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">…</a></li>
+    <li><a href="#">21</a></li>
+    <li class="pagination__arrow"><a href="#">❯</a></li>
+  </ul>
+</nav>
+</div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-top__inner">
+        <div class="footer-info">
+          <a class="logo footer-info__logo" href="#">
+            <img class="logo__img" width="180" height="52" src="img/logo.svg" alt="">
+          </a>
+          <p class="footer-info__text">
+            Следите за нами
+          </p>
+          <ul class="footer-info__list social">
+            <li class="social__item">
+              <a class="social__link" href="#">
+                <svg width="19" height="19">
+                  <use xlink:href="img/sprite.svg#svg-inst"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link" href="#">
+                <svg width="19" height="19">
+                  <use xlink:href="img/sprite.svg#svg-twit"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link" href="#">
+                <svg width="19" height="19">
+                  <use xlink:href="img/sprite.svg#svg-yt"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link" href="#">
+                <svg width="19" height="19">
+                  <use xlink:href="img/sprite.svg#svg-tg"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link" href="#">
+                <svg width="19" height="19">
+                  <use xlink:href="img/sprite.svg#svg-fb"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-top__items">
+          <div class="footer-top__item">
+            <h5 class="footer-top__title">Каталог товаров</h5>
+            <ul class="footer-top__list nav-list">
+              <li class="nav-list__item">
+                <a class="nav-list__link" href="#">Металлообработка</a>
+              </li>
+              <li class="nav-list__item">
+                <a class="nav-list__link" href="#">Обработка камня</a>
+              </li>
+              <li class="nav-list__item">
+                <a class="nav-list__link" href="#">Обработка стекла</a>
+              </li>
+              <li class="nav-list__item">
+                <a class="nav-list__link" href="#">Кузовной ремонт</a>
+              </li>
+              <li class="nav-list__item">
+                <a class="nav-list__link" href="#">Деревообработка</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-top__item">
+            <h5 class="footer-top__title">Каталог товаров</h5>
+            <ul class="footer-top__list nav-list">
+              <li class="nav-list__item">
+                <a class="nav-list__link" href="#">Металлообработка</a>
+              </li>
+              <li class="nav-list__item">
+                <a class="nav-list__link" href="#">Обработка камня</a>
+              </li>
+              <li class="nav-list__item">
+                <a class="nav-list__link" href="#">Обработка стекла</a>
+              </li>
+              <li class="nav-list__item">
+                <a class="nav-list__link" href="#">Кузовной ремонт</a>
+              </li>
+              <li class="nav-list__item">
+                <a class="nav-list__link" href="#">Деревообработка</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-top__item">
+            <h5 class="footer-top__title">Каталог товаров</h5>
+            <ul class="footer-top__list nav-list">
+              <li class="nav-list__item">
+                <a class="nav-list__link" href="#">Металлообработка</a>
+              </li>
+              <li class="nav-list__item">
+                <a class="nav-list__link" href="#">Обработка камня</a>
+              </li>
+              <li class="nav-list__item">
+                <a class="nav-list__link" href="#">Обработка стекла</a>
+              </li>
+              <li class="nav-list__item">
+                <a class="nav-list__link" href="#">Кузовной ремонт</a>
+              </li>
+              <li class="nav-list__item">
+                <a class="nav-list__link" href="#">Деревообработка</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-top__item">
+            <div class="callback">
+              <p class="callback__title">Обратный звонок:</p>
+              <ul class="callback__list">
+                <li class="callback__item">
+                  <a class="callback__link" href="tel:0442008000">
+                    <span>(044) 200-80-00</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="worktime">
+              <p class="worktime__title">График работы:</p>
+              пн-пт с 9:00 18:00
+              <br>
+              сб с 9:00–17:00
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="copyright">
+      Piramida Market 2022 © Все права защищены
+    </p>
+  </div>
+</footer>
+  <script src="js/index.min.js?_v=20230207142403"></script>
+</body>
+
+</html>
